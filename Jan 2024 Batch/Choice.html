@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            background-color: bisque;
+        }
+    </style>
+
+    <script>
+        /*JAVASCRIPT*/
+        function choicemenu(x){
+            if (x===1)
+            alert("Hey we have the best TEA!")
+            if (x===2)
+            alert("Hey we have the best Coffee!")
+            if (x===3)
+            alert("Fresh Juice!!")
+        }
+
+        function showgreetings(){
+
+            var age = document.getElementById("age").value
+
+            if (age <= 50) {
+                document.getElementById("message").innerText = 
+            "Welcome Mr/Ms: " + document.getElementById("username").value
+            + " Your age is " + age
+
+            } 
+            else
+            {
+                document.getElementById("message").innerText = 
+            "Welcome Mr/Ms: " + document.getElementById("username").value
+            + " Your age is " + age + " SENIOR"
+            }
+
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <h1>My Restaurant</h1>
+    <button onclick="choicemenu(1)">Tea</button>
+    <button onclick="choicemenu(2)">Coffee</button>
+    <button onclick="choicemenu(3)">Juice</button>
+    <br>
+
+  <div style="padding: 50px; background-color: rgb(49, 68, 174);">
+
+
+
+    Enter you name : <input type="text" id="username"> <br>
+
+    Enter your age: <input type="number" id="age" min="15" max="60" > <br>
+    <button onclick="showgreetings()">Welcome message</button>
+    <h1 id="message"></h1>
+
+
+
+    
+      
+</div>
+</body>
+</html>
