@@ -1,0 +1,57 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+body{
+    background-color: blanchedalmond;
+    font-weight: bolder;
+
+}
+
+@keyframes fadeIn {
+
+    0% { opacity: 0;}
+    100% {opacity: 1;}
+
+}
+
+@keyframes slider {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0%);}
+}
+
+.fade-in-element { 
+
+    animation: fadeIn 1s ease-out;
+    background-color: coral;
+    border : 1px solid;
+    border-radius: 12px;
+
+}
+.fade-in-element1 { 
+
+    animation: fadeIn 1s ease-out;
+    background-color: rgb(72, 216, 59);
+    border : 1px solid;
+    border-radius: 12px;
+
+}
+
+.flybutton { 
+    animation: slider 4s ease-out;
+    border: 1px solid;
+    border-radius: 12px;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.login{
+    background-color: darkkhaki;
+    margin:auto;
+    width: 700px;
+    border-radius: 15px;
+}
