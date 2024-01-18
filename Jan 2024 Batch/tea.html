@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> 
+    /*here we are writing JS*/
+    function disp(x){
+         document.getElementById("msg").style.color = "black";
+
+        switch(x){
+            case 1:
+            document.getElementById("msg").innerText = "TEA IS AVAILABLE";
+            break;
+            case 2:
+            document.getElementById("msg").innerText ="COFFEE IS AVAILABLE";
+            break;
+            case 3:
+            document.getElementById("msg").innerText ="JUICE IS AVAILABLE";
+            break;
+            case 4:
+            document.getElementById("msg").innerText ="DINNER IS AVAILABLE";
+            document.getElementById("msg").style.color = "red";
+            break;
+
+        }
+
+        
+
+    }
+
+    </script>
+</head>
+<body>
+    <button onclick="disp(1)">Tea</button>
+    <button onclick="disp(2)">Coffee</button>
+    <button onclick="disp(3)">Juice</button>
+    <button onclick="disp(4)">Dinner</button>
+
+    <p id="msg"></p>
+</body>
+</html>
