@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            background-color: beige;
+            
+        }
+        table,  td {
+            border:1px solid;
+        }
+
+        th{
+            border:1px solid;
+            color: blue;
+        }
+        span { 
+            color: red;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bolder;
+        }
+        
+       
+    </style>
+</head>
+<body>
+
+    <div>
+        <span id="clock"></span>
+    
+    <table>
+        <thead>
+            <th>FlightNo</th>
+            <th>From</th>
+            <th>To</th>
+        </thead>
+        <tr>
+            <td>F393</td>
+            <td>Delhi</td>
+            <td>Dubai</td>
+        </tr>
+        <tr>
+            <td>F100</td>
+            <td>Bangalore</td>
+            <td>Singapore</td>
+        </tr>
+        <tr>
+            <td>F900</td>
+            <td>Chennai</td>
+            <td>Mumbai</td>
+        </tr>
+    </table>
+</div>
+</body>
+<script>
+
+function showdate(){
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        clock.textContent = time;
+    }
+    setInterval(showdate, 5000);
+</script>
+</html>
