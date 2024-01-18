@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function disp() {
+
+            document.getElementById("msg").style.color = "black";
+            document.getElementById("msg1").innerText = ""
+            var selectmenu = document.getElementById("menu");
+            var selectitem = selectmenu.options[selectmenu.selectedIndex].text;
+
+            if (selectitem === "Select") {
+                alert("Please select a valid option");
+            }
+            else {
+                document.getElementById("msg").innerText = selectitem
+                if (selectitem === "Coffee" || selectitem==="Dinner" ){
+
+                    document.getElementById("msg").style.color = "red";
+                    document.getElementById("msg1").innerText = "*GST is applicable"
+                }
+  
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <select name="" id="menu" onchange="disp()">
+        <option value="select">Select</option>
+        <option value="tea">Tea</option>
+        <option value="coffee">Coffee</option>
+        <option value="juice">Juice</option>
+        <option value="dinner">Dinner</option>
+    </select>
+    <p id="msg"></p>
+
+    <h6 id="msg1"></h6>
+</body>
+</html>
