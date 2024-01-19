@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function isValidDate(vdate){
+            const date = new Date(vdate);
+            return !isNaN(date.getTime()) && date.toISOString().slice(0,10) === vdate;
+        }
+        function checkdob(){
+            var mydate = document.getElementById("dt").value 
+            alert(mydate)
+            /*we hvae the date entered by user*/
+            /*check if the date is today's*/
+            a = 90;
+            alert("a")
+
+           
+            if(isValidDate(mydate)){
+                alert(`${mydate} is valid`);
+            }
+            else
+            {
+                alert(`${mydate} is not valid`);
+            }
+        }
+
+
+
+        function datediff(){
+            document.getElementById("adults").style.visibility = "hidden";
+            document.getElementById("minors").style.visibility = "hidden";
+
+           var date1 =  document.getElementById("dt").value
+           var date2 =  document.getElementById("dt2").value
+
+           const d1 = new Date(date1);   /*objects*/
+           const d2 = new Date(date2);
+           
+           var datedifference = Math.floor(d1.getTime()  - d2.getTime());
+           console.log(Math.floor(datedifference / (1000*60*60*24)))
+
+          
+
+           var ageDiff =  Math.abs(d2-d1)
+           var yrsDiff = ageDiff / (1000*60*60*24*365.25)
+
+           console.log(Math.ceil(yrsDiff))
+
+           document.getElementById("msg").innerText= "Date diff is : " + 
+           Math.floor(datedifference / (1000*60*60*24)) + " Days!"  + " Age : " + Math.ceil(yrsDiff) + " Years"
+
+           if (Math.ceil(yrsDiff) < 18)
+           {
+            document.getElementById("minors").style.visibility = "visible";
+           }
+           if (Math.ceil(yrsDiff) >= 18)
+           {
+            document.getElementById("adults").style.visibility = "visible";
+           }
+
+        }
+    </script>
+
+    <style>
+        #minors{
+                visibility: hidden;
+                background-color: chartreuse;
+        }
+
+        #adults{
+
+            background-color: brown;
+            visibility: hidden;
+
+        }
+    </style>
+</head>
+<body>
+
+   Date 1:
+    <!-- <input id="dt" type="date">  -->
+    <input id="dt" type="date"> 
+
+
+    Date 2:
+    <!-- <input id="dt" type="date">  -->
+    <input id="dt2" type="date"> 
+     
+    <button onclick="checkdob()">Ok</button>
+    <button onclick="datediff()">Date Difference</button>
+
+    <h1 id="msg"></h1>
+
+    <div id="minors">
+        This is for people below 18 years
+    </div>
+
+    <div id="adults">
+        This is for people above 18 years
+    </div>
+</body>
+</html>
