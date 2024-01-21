@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+    body{
+        background-color: cornsilk;
+    }
+ @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .fade-in-element {
+    animation: fadeIn 5s ease-out;
+    background-color:greenyellow;
+    border: 1px solid;
+    border-radius: 12px;
+  }
+  .fade-in-element1 {
+    animation: fadeIn 5s ease-out;
+    background-color:rgba(0, 0, 255, 0.69);
+    color: yellow;
+   
+    border: 1px solid;
+    border-radius: 12px;
+  }
+  
+  @keyframes slideIn {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+.slide-in-element {
+  animation: slideIn 4s ease-out;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>The @keyframes Rule</h1>
+
+<div class="fade-in-element">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, at corrupti, quod repellendus aut reprehenderit consequatur vel explicabo omnis facere amet hic et quis maxime porro asperiores qui adipisci ipsum!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, expedita autem! Architecto, doloribus id. Quasi quia assumenda magnam? Aliquid repudiandae minus rerum facere ipsam perferendis voluptatum ipsa iusto suscipit eveniet?</p>
+</div>
+<div class="fade-in-element1">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, at corrupti, quod repellendus aut reprehenderit consequatur vel explicabo omnis facere amet hic et quis maxime porro asperiores qui adipisci ipsum!</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, expedita autem! Architecto, doloribus id. Quasi quia assumenda magnam? Aliquid repudiandae minus rerum facere ipsam perferendis voluptatum ipsa iusto suscipit eveniet?</p>
+</div>
+
+
+<div class="slide-in-element">
+    <button>This is a sample button</button>
+</div>
+</body>
+</html>
