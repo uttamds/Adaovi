@@ -1,0 +1,104 @@
+let apiUrl = 'https://randomuser.me/api/?results=10'
+
+function getServerData(apiUrl) {
+    let response = fetch(apiUrl)
+    response
+        .then(function(result){
+            return result.json()
+        })
+        .then(function(jsonData){
+            let table = document.getElementById('data-table').getElementsByTagName('tbody')[0];
+            for (let emp of jsonData['results']) {
+                let fullName = emp.name['first'] + ' ' + emp.name['last']
+                let row = table.insertRow();
+                let imgCell = row.insertCell(0);
+                let img = document.createElement('img');
+                img.src = emp.picture.medium;
+                imgCell.appendChild(img);
+                row.insertCell(1).innerHTML = fullName;
+                row.insertCell(2).innerHTML = emp.email;
+                row.insertCell(3).innerHTML = emp.gender;
+                row.insertCell(4).innerHTML = emp.phone;
+            }
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+}
+
+getServerData(apiUrl)
+
+
+========================
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>Lab 2.1</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <script src="ajax_callback.js"></script> -->
+    <script src="ajax_promise.js"></script>
+<!--    <script src="ajax_async_await.js"></script>-->
+
+    <table id="data-table">
+        <thead>
+        <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+
+================================
+
+#data-table {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#data-table th {
+    background-color: #87CEEB;
+    color: white;
+}
+
+#data-table td, #data-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#data-table tr:hover {
+    background-color: #ddd;
+}
+
+#data-table img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+
+
